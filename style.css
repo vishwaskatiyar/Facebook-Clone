@@ -4,14 +4,25 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+:root {
+  --body-color: #efefef;
+  --nav-color: #1876f2;
+  --bg-color: #fff;
+}
+.dark-theme {
+  --body-color: #0a0a0a;
+  --nav-color: #000;
+  --bg-color: #000;
+}
 body {
-  background: #efefef;
+  background: var(--body-color);
+  transition: background 0.3s;
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1876f2;
+  background: var(--nav-color);
   padding: 5px 5%;
   position: sticky;
   top: 0;
@@ -88,7 +99,7 @@ nav {
   align-self: flex-start;
 }
 .right-sidebar {
-  background: #fff;
+  background: var(--bg-color);
   flex-basis: 25%;
   position: sticky;
   top: 70px;
@@ -265,7 +276,7 @@ nav {
 }
 .rigth-post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 6px;
   padding: 20px;
   color: #626262;
@@ -317,7 +328,7 @@ nav {
 }
 .post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 6px;
   padding: 20px;
   color: #626262;
@@ -391,7 +402,7 @@ nav {
   width: 90%;
   max-width: 350px;
   /* height: 400px; */
-  background: #fff;
+  background: var(--bg-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   overflow: hidden;
@@ -441,4 +452,178 @@ nav {
 }
 .setting-links a img {
   width: 10px;
+}
+#dark-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ccc;
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background 0.5s;
+}
+#dark-btn span {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+#dark-btn.dark-btn-on {
+  padding-left: 23px;
+  background: #0a0a0a;
+}
+/* profilepage css................................................................ */
+
+.profile-container {
+  padding: 20px 15%;
+  color: #626262;
+}
+.cover-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+.profile-details {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.profile-detail-row {
+  display: flex;
+  align-items: flex-start;
+}
+.pd-image {
+  width: 100px;
+  margin-right: 20px;
+  border-radius: 6px;
+}
+.profile-detail-row div h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+.profile-detail-row div p {
+  font-size: 13px;
+}
+.profile-detail-row div img {
+  width: 25px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+.profile-detail-right button {
+  background: #1876f2;
+  border: 0;
+  outline: 0;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.profile-detail-right button img {
+  height: 15px;
+  margin-right: 10px;
+}
+.profile-detail-right button:first-child {
+  background: #e4e6eb;
+  color: #000;
+}
+.profile-detail-right {
+  text-align: right;
+}
+.profile-detail-right a {
+  background: #e4e6eb;
+  border-radius: 3px;
+  padding: 12px;
+  display: inline-flex;
+  margin-top: 30px;
+}
+.profile-detail-right a img {
+  width: 30px;
+}
+.profile-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.info-col {
+  flex-basis: 33%;
+}
+.post-col {
+  flex-basis: 65%;
+}
+.profile-intro {
+  background: var(--bg-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.profile-intro h3 {
+  font-weight: 600;
+}
+.intro-text {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.intro-text img {
+  width: 15px;
+  margin-left: -3px;
+}
+.profile-intro hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 24px 0;
+}
+.profile-intro ul li {
+  list-style: none;
+  font-size: 15px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+.profile-intro ul li img {
+  width: 26px;
+  margin-right: 10px;
+}
+.title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-box a {
+  text-decoration: none;
+  color: #1876f2;
+  font-size: 14px;
+}
+.photo-box div img {
+  width: 85px;
+  height: 75px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.photo-box div,
+.friends-box div {
+  margin-top: 10px;
+  align-items: center;
+}
+.profile-intro p {
+  font-size: 14px;
+}
+
+.friends-box div img {
+  width: 85px;
+  height: 75px;
+  cursor: pointer;
+  object-fit: cover;
 }
